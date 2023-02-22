@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32825.248
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "invert", "invert.vcxproj", "{01BFF1BA-8B10-496B-A235-C63EC52B7EBA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{01BFF1BA-8B10-496B-A235-C63EC52B7EBA}.Debug|x64.ActiveCfg = Debug|x64
+		{01BFF1BA-8B10-496B-A235-C63EC52B7EBA}.Debug|x64.Build.0 = Debug|x64
+		{01BFF1BA-8B10-496B-A235-C63EC52B7EBA}.Debug|x86.ActiveCfg = Debug|Win32
+		{01BFF1BA-8B10-496B-A235-C63EC52B7EBA}.Debug|x86.Build.0 = Debug|Win32
+		{01BFF1BA-8B10-496B-A235-C63EC52B7EBA}.Release|x64.ActiveCfg = Release|x64
+		{01BFF1BA-8B10-496B-A235-C63EC52B7EBA}.Release|x64.Build.0 = Release|x64
+		{01BFF1BA-8B10-496B-A235-C63EC52B7EBA}.Release|x86.ActiveCfg = Release|Win32
+		{01BFF1BA-8B10-496B-A235-C63EC52B7EBA}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B3111B5B-AAD6-463C-A17F-D9C98EE21B42}
+	EndGlobalSection
+EndGlobal
