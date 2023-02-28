@@ -15,13 +15,11 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="invert.cpp">
+    <ClCompile Include="vector.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="tests.ps1">
+    <ClCompile Include="Tests.cpp">
       <Filter>Исходные файлы</Filter>
-    </None>
+    </ClCompile>
   </ItemGroup>
 </Project>
