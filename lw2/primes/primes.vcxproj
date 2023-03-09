@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{707195e4-2e13-4413-a873-ac1893f7daa5}</ProjectGuid>
-    <RootNamespace>Minidict</RootNamespace>
+    <ProjectGuid>{6f215e99-5337-4465-a4a4-d67de456ee97}</ProjectGuid>
+    <RootNamespace>primes</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,15 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="DictHandler.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="InterfaceDict.cpp" />
-    <ClCompile Include="StringHandler.cpp" />
+    <ClCompile Include="primes.cpp" />
+    <ClCompile Include="PrimesHandler.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DictHandler.h" />
-    <ClInclude Include="InterfaceDict.h" />
-    <ClInclude Include="StringHandler.h" />
+    <ClInclude Include="PrimesHandler.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

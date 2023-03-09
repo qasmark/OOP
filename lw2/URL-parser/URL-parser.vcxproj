@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{707195e4-2e13-4413-a873-ac1893f7daa5}</ProjectGuid>
-    <RootNamespace>Minidict</RootNamespace>
+    <ProjectGuid>{eca3dc64-3fac-489b-b44c-7f7e5d42f061}</ProjectGuid>
+    <RootNamespace>URLparser</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,15 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="DictHandler.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="InterfaceDict.cpp" />
-    <ClCompile Include="StringHandler.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="DictHandler.h" />
-    <ClInclude Include="InterfaceDict.h" />
-    <ClInclude Include="StringHandler.h" />
+    <ClCompile Include="URL-parser.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
