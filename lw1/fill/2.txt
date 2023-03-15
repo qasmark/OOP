@@ -1,0 +1,1 @@
+Invalid count of arguments. Using sample: fill.exe <input file> <output file>
