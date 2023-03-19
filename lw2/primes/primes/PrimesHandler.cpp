@@ -1,23 +1,29 @@
 #include "PrimesHandler.h"
 
-std::set<int> GetPrimeNums(int upperBound)
+std::set<int> GetPrimes(int upperBound)
 {
 	std::vector<bool> primes(upperBound + 1, true);
-	std::set<int> result = { 2 };
-	int limitOfChecking = static_cast<int>(std::sqrt(primes.size()) + 1);
-	for (int i = MIN_BORDER; i <= upperBound; i++)
+	std::set<int> result;
+
+	result.insert(2);
+	const double sizeSquareRoot = std::sqrt(primes.size());
+
+	for (size_t i = 3; i < primes.size(); i += 2)
 	{
-		std::set<int>::iterator iter = result.lower_bound(limitOfChecking);
 		if (primes[i])
 		{
-			result.insert(iter, i);
-			for (int j = i * i; j <= upperBound; j += i)
+			result.insert(static_cast<int>(i));
+
+			if (i < sizeSquareRoot)
 			{
-				primes[j] = false;
-					
+				for (size_t j = i * i; j < primes.size(); j += i)
+				{
+					primes[j] = false;
+				}
 			}
 		}
 	}
+
 	return result;
 }
 
@@ -28,7 +34,7 @@ std::set<int> GeneratePrimesSet(int upperBound)
 		throw std::out_of_range("Invalid upper bound value");
 	}
 
-	return GetPrimeNums(upperBound);
+	return GetPrimes(upperBound);
 }
 
 void PrintPrimes(std::ostream& out, const std::set<int>& primes)

@@ -25,7 +25,7 @@ int main(int argc, char** argv)
 	try
 	{
 		auto const primes = GeneratePrimesSet(upperBound);
-		PrintPrimes(std::cout, primes);
+//		PrintPrimes(std::cout, primes);
 		std::cout << "The count of primes is " << primes.size() << "\n";
 		std::cout << "The time execution is " << (double)(clock() - time) / 1000 << " s.\n";
 	}

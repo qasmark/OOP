@@ -55,7 +55,7 @@ int ParsePort(const std::string& portStr, Protocol protocol)
 
 URLForm ParseURL(const std::string& url)
 {
-	std::regex urlRegex(R"(^(\w+):\/\/([^:\/\s]+)(?::(\d+))?\/(.*)$)");
+	std::regex urlRegex(R"((ftp|https?)://([0-9A-Za-z\-.]+)(?::(\d+))?(?:/(.*))?)", std::regex_constants::icase);
 	URLForm unpackedURL;
 	std::smatch urlMatch;
 
@@ -63,8 +63,13 @@ URLForm ParseURL(const std::string& url)
 	{
 		throw std::invalid_argument("invalid URL");
 	}
+
 	unpackedURL.url = url;
-	unpackedURL.protocol = ParseProtocol(urlMatch[1].str());
+
+	std::string protocol = urlMatch[1].str();
+	std::transform(protocol.begin(), protocol.end(), protocol.begin(), [](unsigned char c) { return std::tolower(c); });
+
+	unpackedURL.protocol = ParseProtocol(protocol);
 	unpackedURL.host = ParseHost(urlMatch[2].str());
 	unpackedURL.port = ParsePort(urlMatch[3].str(), unpackedURL.protocol);
 	unpackedURL.document = urlMatch[4].str();
