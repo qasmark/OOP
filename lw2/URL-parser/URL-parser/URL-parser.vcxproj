@@ -132,6 +132,7 @@
     <ClCompile Include="URLHandler.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="URLHandlerTests.h" />
     <ClInclude Include="URLHandler.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

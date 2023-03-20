@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{16a0ac80-1c69-4e1e-87a3-487ff1e53bdd}</ProjectGuid>
-    <RootNamespace>minidict</RootNamespace>
+    <ProjectGuid>{0941f7ee-0688-4030-90c0-849be7c39ce1}</ProjectGuid>
+    <RootNamespace>Minidict</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,11 +127,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ConsoleHandler.cpp" />
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="DictHandler.cpp" />
+    <ClCompile Include="Mini-dict.cpp" />
+    <ClCompile Include="StringHandler.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ConsoleHandler.h" />
+    <ClInclude Include="DictHandler.h" />
+    <ClInclude Include="StringHandler.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

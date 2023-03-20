@@ -10,16 +10,18 @@ std::set<int> GetPrimes(int upperBound)
 
 	for (size_t i = 3; i < primes.size(); i += 2)
 	{
-		if (primes[i])
+		if (!primes[i])
 		{
-			result.insert(static_cast<int>(i));
+			continue;
+		}
 
-			if (i < sizeSquareRoot)
+		result.insert(static_cast<int>(i));
+
+		if (i < sizeSquareRoot)
+		{
+			for (size_t j = i * i; j < primes.size(); j += i)
 			{
-				for (size_t j = i * i; j < primes.size(); j += i)
-				{
-					primes[j] = false;
-				}
+				primes[j] = false;
 			}
 		}
 	}

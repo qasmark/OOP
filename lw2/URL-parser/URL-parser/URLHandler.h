@@ -15,6 +15,11 @@ enum class Protocol
 constexpr int MIN_PORT = 1;
 constexpr int MAX_PORT = 65535;
 
+constexpr int HOST_REGEX_INDEX = 2;
+constexpr int PORT_REGEX_INDEX = 3;
+constexpr int DOCUMENT_REGEX_INDEX = 4;
+
+
 const std::map<Protocol, int> DEFAULT_PORTS = {
 	{Protocol::FTP, 21},
 	{Protocol::HTTP, 80},
@@ -26,20 +31,8 @@ struct URLForm
 	std::string url;
 	std::string host;
 	Protocol protocol;
-	int port;
+	int port = 1;
 	std::string document;
 };
-
-Protocol ParseProtocol(const std::string& protocolStr);
-
-std::string ParseHost(const std::string hostStr);
-
-int ParsePort(const std::string& portStr, Protocol protocol);
-
-URLForm ParseURL(const std::string& url);
-
-void PrintUnpackedURL(std::ostream& output, const URLForm& urlForm);
-
-
 
 void ParseURLFromStreams(std::istream& input, std::ostream& output);

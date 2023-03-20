@@ -26,5 +26,8 @@
     <ClInclude Include="..\URL-parser\URLHandler.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="..\URL-parser\URLHandlerTests.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

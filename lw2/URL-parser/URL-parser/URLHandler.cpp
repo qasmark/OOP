@@ -1,10 +1,12 @@
 #include "URLHandler.h"
+#include "URLHandlerTests.h"
+
 
 Protocol ParseProtocol(const std::string& protocolStr)
 {
 	if (protocolStr == "ftp")
 	{
-	return Protocol::FTP;
+		return Protocol::FTP;
 	}
 	else if (protocolStr == "http")
 	{
@@ -47,7 +49,7 @@ int ParsePort(const std::string& portStr, Protocol protocol)
 
 	if (port < MIN_PORT || port > MAX_PORT)
 	{
-		throw std::invalid_argument("invalid URL-port value");
+		throw std::invalid_argument("URL-port out of range");
 	}
 
 	return port;
@@ -70,16 +72,19 @@ URLForm ParseURL(const std::string& url)
 	std::transform(protocol.begin(), protocol.end(), protocol.begin(), [](unsigned char c) { return std::tolower(c); });
 
 	unpackedURL.protocol = ParseProtocol(protocol);
-	unpackedURL.host = ParseHost(urlMatch[2].str());
-	unpackedURL.port = ParsePort(urlMatch[3].str(), unpackedURL.protocol);
-	unpackedURL.document = urlMatch[4].str();
+	unpackedURL.host = ParseHost(urlMatch[HOST_REGEX_INDEX].str());
+	unpackedURL.port = ParsePort(urlMatch[PORT_REGEX_INDEX].str(), unpackedURL.protocol);
+	unpackedURL.document = urlMatch[DOCUMENT_REGEX_INDEX].str();
 
 	return unpackedURL;
 }
 
 void PrintUnpackedURL(std::ostream& output, const URLForm& urlForm)
 {
-	output << urlForm.url << '\n' << "HOST: " << urlForm.host << "\n" << "PORT: " << urlForm.port << "\n" << "DOC: " << urlForm.document << '\n';
+	output << urlForm.url << std::endl
+		<< "HOST: " << urlForm.host << std::endl
+		<< "PORT: " << urlForm.port << std::endl
+		<< "DOC: " << urlForm.document << std::endl;
 }
 
 void ParseURLFromStreams(std::istream& input, std::ostream& output)
@@ -93,7 +98,7 @@ void ParseURLFromStreams(std::istream& input, std::ostream& output)
 		}
 		catch (const std::exception& e)
 		{
-			output << "URL parsing error: " << e.what() << '\n';
+			output << "URL parsing error: " << e.what() << std::endl;
 		}
 	}
 }

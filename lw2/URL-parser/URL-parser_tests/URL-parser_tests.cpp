@@ -1,6 +1,7 @@
 ﻿#define CATCH_CONFIG_MAIN
 #include "../../catch2/catch.hpp"
 #include "../URL-parser/URLHandler.h"
+#include "../URL-parser/URLHandlerTests.h"
 
 SCENARIO("TESTS")
 {
@@ -8,7 +9,7 @@ SCENARIO("TESTS")
 	{
 		std::stringstream in("HELP ME WITH STUDY");
 		std::stringstream out;
-
+		// remake ParS
 		ParseURLFromStreams(in, out);
 
 		REQUIRE(out.str() == "URL parsing error: invalid URL\n");
@@ -58,6 +59,6 @@ SCENARIO("TESTS")
 
 		PrintUnpackedURL(out, site);
 
-		REQUIRE(out.str() == "https://vk.com:3000/id1\nHOST: vk.com\nPORT: 3000\nDOC: id1\n");
+		REQUIRE(out.str() == "https://vk.com:3000/id1\nHOST: vk.com\nPORT: 3000\nDOC : id1\n");
 	}
 }

@@ -5,7 +5,7 @@
 int main(int argc, char** argv)
 {
 	clock_t time = clock();
-	std::fstream fout("output.txt");
+//	std::fstream fout("output.txt");
 	if (argc != 2)
 	{
 		std::cout << "Invalid count of argument. Use the sample: primes.exe <number>\n";

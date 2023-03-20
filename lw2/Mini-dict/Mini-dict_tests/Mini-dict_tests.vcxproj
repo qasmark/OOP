@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{02df370f-c4cf-42a1-b43f-31ed78208a49}</ProjectGuid>
-    <RootNamespace>URLparsertests</RootNamespace>
+    <ProjectGuid>{a42e3ebf-b7af-4bfe-a8a5-b1ffe9547c66}</ProjectGuid>
+    <RootNamespace>Minidicttests</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -81,6 +81,10 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
     <PostBuildEvent>
       <Command>"$(TargetPath)"</Command>
     </PostBuildEvent>
@@ -100,6 +104,10 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
     <PostBuildEvent>
       <Command>"$(TargetPath)"</Command>
     </PostBuildEvent>
@@ -115,6 +123,10 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
     <PostBuildEvent>
       <Command>"$(TargetPath)"</Command>
     </PostBuildEvent>
@@ -134,17 +146,22 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
     <PostBuildEvent>
       <Command>"$(TargetPath)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\URL-parser\URLHandler.cpp" />
-    <ClCompile Include="URL-parser_tests.cpp" />
+    <ClCompile Include="..\Mini-dict\DictHandler.cpp" />
+    <ClCompile Include="..\Mini-dict\StringHandler.cpp" />
+    <ClCompile Include="Mini-dict_tests.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\URL-parser\URLHandler.h" />
-    <ClInclude Include="..\URL-parser\URLHandlerTests.h" />
+    <ClInclude Include="..\Mini-dict\DictHandler.h" />
+    <ClInclude Include="..\Mini-dict\StringHandler.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
