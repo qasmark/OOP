@@ -2,13 +2,16 @@
 
 std::set<int> GetPrimes(int upperBound)
 {
+	// add assert when upperBound less then 2 
+	// добавить комментарий для ограниченного диапазона использования
+
 	std::vector<bool> primes(upperBound + 1, true);
 	std::set<int> result;
 
 	result.insert(2);
 	const double sizeSquareRoot = std::sqrt(primes.size());
 
-	for (size_t i = 3; i < primes.size(); i += 2)
+	for (size_t i = 3; i < primes.size(); i += 2) // ускорить внешний цикл 
 	{
 		if (!primes[i])
 		{
@@ -19,7 +22,7 @@ std::set<int> GetPrimes(int upperBound)
 
 		if (i < sizeSquareRoot)
 		{
-			for (size_t j = i * i; j < primes.size(); j += i)
+			for (size_t j = i * i; j < primes.size(); j += i) // ускорить вн. цикл 
 			{
 				primes[j] = false;
 			}
