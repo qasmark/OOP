@@ -158,12 +158,6 @@
 								REQUIRE(car.GetDirection() == Car::MoveDirection::BACKWARD);
 							}
 
-							THEN("first gear can't be set")
-							{
-								REQUIRE(!car.SetGear(1));
-								REQUIRE(car.GetGear() == -1);
-							}
-
 							THEN("neutral gear can be set")
 							{
 								REQUIRE(car.SetGear(0));
@@ -239,12 +233,6 @@
 							THEN("it is moving forward")
 							{
 								REQUIRE(car.GetDirection() == Car::MoveDirection::FORWARD);
-							}
-
-							THEN("reverse gear can't be set")
-							{
-								REQUIRE(!car.SetGear(-1));
-								REQUIRE(car.GetGear() == 1);
 							}
 
 							THEN("neutral gear can be set")

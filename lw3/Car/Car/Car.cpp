@@ -55,11 +55,19 @@ int Car::GetGear()
 
 int Car::GetSpeed()
 {
-		return std::abs(m_speed);
+		return std::abs(m_speed); // можно ли убрать abs 
 }
 
 Car::MoveDirection Car::GetDirection()
 {
+		if (m_speed > 0 && m_gear == -1)
+		{
+			return MoveDirection::BACKWARD;
+		}
+		if (m_speed > 0 && m_gear == 0 && Car::MoveDirection::BACKWARD == MoveDirection::BACKWARD)
+		{
+			return MoveDirection::BACKWARD;
+		}
 		if (m_speed > 0)
 		{
 			return MoveDirection::FORWARD;
@@ -68,10 +76,8 @@ Car::MoveDirection Car::GetDirection()
 		{
 			return MoveDirection::STAY;
 		}
-		else
-		{
-			return MoveDirection::BACKWARD;
-		}
+
+		return MoveDirection::BACKWARD;
 }
 
 bool Car::SetGear(int gear)
@@ -86,7 +92,7 @@ bool Car::SetGear(int gear)
 			return false;
 		}
 
-		if (m_speed > 0 && gear == -1 || m_speed < 0 && gear > 0)
+		if ((m_gear > 0 && gear < 0) && (m_gear < 0 && gear > 0))
 		{
 			return false;
 		}

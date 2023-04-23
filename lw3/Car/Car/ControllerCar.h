@@ -24,7 +24,7 @@ private:
 
 		enum class CommandType
 		{
-			IDLE,
+			DEFAULT,
 			HELP,
 			INFO,
 			EXIT,
@@ -32,6 +32,7 @@ private:
 			ENGINE_OFF,
 			SET_GEAR,
 			SET_SPEED,
+
 		};
 
 		struct Command

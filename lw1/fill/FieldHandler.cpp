@@ -16,7 +16,7 @@ Field ReadField(std::istream& inputFile)
 		throw std::runtime_error("Failed to read from input file");
 	}
 
-	while (!inputFile.eof())
+	while (!inputFile.eof())//  переписать
 	{
 		inputFile.get(ch);
 
@@ -91,7 +91,7 @@ void FillCell(Field& field, size_t row, size_t column)
 		}
 	}
 }
-
+// рекурсивный подход приведет к переполнению стека вызовов
 void FillField(Field& field)
 {
 	for (size_t row = 0; row < FIELD_SIZE; ++row)
@@ -122,3 +122,4 @@ void PrintField(std::ostream& output, const Field& field)
 		throw std::runtime_error("Failed to write to output file");
 	}
 }
+// тесты не расширяемы 

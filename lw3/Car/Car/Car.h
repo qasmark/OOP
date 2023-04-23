@@ -8,7 +8,7 @@ class Car
 public:
 		enum class MoveDirection
 		{
-			BACKWARD = -1,
+			BACKWARD,
 			STAY,
 			FORWARD,
 		};

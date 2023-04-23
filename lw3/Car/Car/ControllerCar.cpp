@@ -113,7 +113,7 @@ ControllerCar::Command ControllerCar::ReadCommand()
 	}
 	std::stringstream input(userInput);
 	Command command;
-	CommandType type = CommandType::IDLE;
+	CommandType type = CommandType::DEFAULT;
 	std::string commandTypeStr;
 
 	try
@@ -155,9 +155,9 @@ std::string ControllerCar::ConvertMoveDirectionToString(Car::MoveDirection moveD
 
 void ControllerCar::Help()
 {
-	m_output << "Help - show this message\n"
-		"Info - print car info\n"
-		"Exit - stop the program\n"
+	m_output << "help - show this message\n"
+		"info - print car status\n"
+		"exit - stop the program\n"
 		"EngineOn - start the car engine\n"
 		"EngineOff - stop the car engine\n"
 		"SetGear <gear>	- change car gear\n"
@@ -182,7 +182,6 @@ void ControllerCar::SetGear(int gear)
 				m_output << "Gear has been set to " << gear << "\n";
 				return;
 		}
-
 		m_output << "Failed to set set speed by next value: " << gear << "\n";
 }
 
@@ -210,7 +209,7 @@ void ControllerCar::EngineOff()
 
 void ControllerCar::PrintInfo()
 {
-	m_output << "Car state:\n"
+	m_output << "Car status:\n"
 		<< "Engine: " << (m_car.IsTurnedOn() ? "on" : "off") << '\n'
 		<< "Direction: " << ConvertMoveDirectionToString(m_car.GetDirection()) << '\n'
 		<< "Speed: " << m_car.GetSpeed() << '\n'
