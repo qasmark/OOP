@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{99561d62-dda1-4316-bcc8-82dfbb5aa4d7}</ProjectGuid>
-    <RootNamespace>SolutionEquals</RootNamespace>
+    <ProjectGuid>{465dda84-dd1d-45e5-a419-557f33ca973b}</ProjectGuid>
+    <RootNamespace>HttpUrltests</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,7 +127,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="SolutionEquals.cpp" />
+    <ClCompile Include="..\HttpUrl\CHttpUrl.cpp" />
+    <ClCompile Include="..\HttpUrl\CUrlParsingError.cpp" />
+    <ClCompile Include="HttpUrl_tests.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\HttpUrl\CHttpUrl.h" />
+    <ClInclude Include="..\HttpUrl\CUrlParsingError.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
