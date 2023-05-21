@@ -148,7 +148,7 @@ std::string CHttpUrl::GetURL() const
 {
 	std::string url;
 
-	url += ParseProtocolToString(m_protocol);
+	url += ConvertProtocolToString(m_protocol);
 	url += "://";
 	url += m_domain;
 	url += (m_port != HTTP_PORT && m_port != HTTPS_PORT) ? ":" + std::to_string(m_port) : "";
@@ -177,7 +177,7 @@ Port CHttpUrl::GetPort() const
 	return m_port;
 }
 
-std::string CHttpUrl::ParseProtocolToString(Protocol protocol)
+std::string CHttpUrl::ConvertProtocolToString(Protocol protocol)
 {
 
 	switch (protocol)

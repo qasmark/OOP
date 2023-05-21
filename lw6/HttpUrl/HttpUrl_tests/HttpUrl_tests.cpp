@@ -171,7 +171,7 @@ SCENARIO("Testing get-methods")
 	std::string domain = "faceit.com";
 	Port port = 4554;
 	std::string document = "/stats/ratings/form.php?";
-	std::string correctStringUrl = CHttpUrl::ParseProtocolToString(protocol) + "://" + domain + ":" + std::to_string(port) + document;
+	std::string correctStringUrl = CHttpUrl::ConvertProtocolToString(protocol) + "://" + domain + ":" + std::to_string(port) + document;
 
 	CHttpUrl correctUrl(domain, document, protocol, port);
 	WHEN("Testing GetProtocol")

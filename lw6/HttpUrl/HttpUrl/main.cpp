@@ -3,7 +3,7 @@
 
 void PrintUrlInfo(std::ostream& outputStream, CHttpUrl const& httpUrl)
 {
-	outputStream << "Protocol: " << CHttpUrl::ParseProtocolToString(httpUrl.GetProtocol())
+	outputStream << "Protocol: " << CHttpUrl::ConvertProtocolToString(httpUrl.GetProtocol())
 		<< std::endl << "Port: " << httpUrl.GetPort() << std::endl
 		<< "Domain: " << httpUrl.GetDomain() << std::endl
 		<< "Document: " << httpUrl.GetDocument() << std::endl

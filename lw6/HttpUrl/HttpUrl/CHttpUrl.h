@@ -34,7 +34,6 @@ public:
 		Port port
 	);
 
-	// возвращать по константсной ссылке + noexpect
 	std::string GetURL() const;
 	std::string GetDomain() const;
 	std::string GetDocument() const;
@@ -42,7 +41,7 @@ public:
 	Port GetPort() const;
 
 	// поменять имя метода 
-	static std::string ParseProtocolToString(Protocol protocol);
+	static std::string ConvertProtocolToString(Protocol protocol);
 private:
 	Protocol m_protocol;
 	std::string m_domain;
