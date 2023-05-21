@@ -48,11 +48,7 @@ WeekDay CDate::GetWeekDay() const
 
 bool CDate::IsValid() const
 {
-	if (m_days > MAX_AVAILABLE_DAY)
-	{
-		return false;
-	}
-	return true;
+	return !(m_days > MAX_AVAILABLE_DAY);
 }
 
 bool CDate::operator==(CDate const& otherDate) const
@@ -101,7 +97,7 @@ CDate const CDate::operator++(int)
 		return *this;
 	}
 	CDate tempDateCopy(*this);
-	++* this;
+	++(*this);
 	return tempDateCopy;
 }
 
@@ -247,7 +243,7 @@ DateValues CDate::ConvertDaysToDateValues(Days days) const
 	}
 
 	int monthIndex;
-	Days d;
+	Days d{};
 
 	for (monthIndex = 0; monthIndex < 12 && daysGap > MONTHS_OFFSET[IsLeapYear(year)][monthIndex]; monthIndex++)
 	{
