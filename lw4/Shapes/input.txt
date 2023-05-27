@@ -1,0 +1,15 @@
+rectangle 0 0 800 600 0ff 0ff
+circle 400 300 150 00aeef0A 00aeef0A
+circle 400 300 100 00aeefff 00aeefff
+circle 368 264 50 14d441ff 14d441ff
+circle 387 300 50 14d441ff 14d441ff
+circle 417 254 50 14d441ff 14d441ff
+circle 375 275 25 12a033ff 12a033ff
+circle 650 100 70 ffff001a ffff001a
+circle 650 100 50 ffff00ff ffc949ff
+circle 200 113 20 ffffff0f ffffff0f
+triangle 196 109 200 100 204 109 ffffff1a ffffff66
+triangle 204 109 213 113 204 117 ffffff1a ffffff66
+triangle 204 117 200 126 196 117 ffffff1a ffffff66
+triangle 196 117 187 113 196 109 ffffff1a ffffff66
+circle 200 113 4 ffffffff ffffffff
