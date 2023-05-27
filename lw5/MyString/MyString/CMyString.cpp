@@ -36,6 +36,7 @@ CMyString::CMyString(CMyString&& other) noexcept
 {
 	other.m_data = nullptr;
 	other.m_length = 0;
+	// using swap
 }
 
 CMyString::CMyString(std::string const& stlString)
@@ -117,7 +118,6 @@ CMyString& CMyString::operator+=(CMyString const& other)
 	char* newCMyStringData = nullptr;
 
 	newCMyStringData = new char[newCMyStringLength + 1];
-
 	memcpy(newCMyStringData, m_data, m_length);
 	memcpy(newCMyStringData + m_length, other.m_data, other.m_length);
 
