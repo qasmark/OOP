@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -47,7 +47,7 @@ namespace MyLIst
                 Add(item);
             }
         }
-
+        // сделать за константное время
         public void Add(T item)
         {
             Node newNode = new Node(item);
@@ -66,7 +66,7 @@ namespace MyLIst
 
             _count++;
         }
-
+        // передача T в начало, в конец, в произвольну позицию
         public void Insert(int index, T item)
         {
             if (index < 0 || index > _count)
@@ -128,7 +128,7 @@ namespace MyLIst
         {
             Add(item);
         }
-
+        // передача T в начало, в конец, в произвольну позицию
         public void RemoveAt(int index)
         {
             if (index < 0 || index >= _count)
@@ -173,7 +173,7 @@ namespace MyLIst
                 current = current.Next;
             }
         }
-
+        // тест: во время итерации по списки можно удалить/добавлять элементы
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
@@ -188,11 +188,12 @@ namespace MyLIst
                 current = current.Prev;
             }
         }
+        // DeepCopy || Clone?
         public CMyList<T> DeepCopy()
         {
             return new CMyList<T>(this);
         }
-
+        // написать тест
         public CMyList<T> Clone()
         {
             CMyList<T> newList = new CMyList<T>();
@@ -202,6 +203,7 @@ namespace MyLIst
             }
             return newList;
         }
+        // написать тесты
         public CMyList<T> this[int index]
         {
             get
